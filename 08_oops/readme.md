@@ -37,3 +37,24 @@
 | **Who sees it**   | Member functions in the class can access data                          | User sees only public methods; implementation is hidden even in subclass objects |
 
 ---
+
+Here’s the **updated table and last notes** including the “without abstract method” case:
+
+---
+
+### **Notes**
+
+* **ABC alone does not prevent object creation**
+* **Only @abstractmethod makes the class truly abstract** and enforces that subclasses implement certain methods
+* If an ABC has **no abstract methods**, you **can still create its object**
+
+---
+
+### **Summary Table**
+
+| Thing                        | Without `@abstractmethod` | With `@abstractmethod`            |
+| ---------------------------- | ------------------------- | --------------------------------- |
+| Subclass implementation      | Optional                  | Mandatory                         |
+| Can create Payment object?   | ✅ Yes                     | ❌ No                              |
+| Does it enforce abstraction? | ❌ No                      | ✅ Yes                             |
+| `pass` meaning               | Placeholder, does nothing | Same, but now required for syntax |

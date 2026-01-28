@@ -12,6 +12,7 @@ class Payment(ABC):
 
         print("Payment Completed !!")
 
+    @abstractmethod
     def process_payment(self, amount):
         # Declared in abstract class, implemented in subclass
         pass
@@ -30,9 +31,7 @@ class UPI(Payment):
 
 # Usage
 payment1 = CreditCard()
-# payment1.pay(500)
+payment1.pay(500)
 
 payment2 = UPI()
-# payment2.pay(300)
-
-payment1.process_payment(100)
+payment2.pay(300)
