@@ -58,3 +58,22 @@ Here’s the **updated table and last notes** including the “without abstract 
 | Can create Payment object?   | ✅ Yes                     | ❌ No                              |
 | Does it enforce abstraction? | ❌ No                      | ✅ Yes                             |
 | `pass` meaning               | Placeholder, does nothing | Same, but now required for syntax |
+
+Here’s a **short, clear note** combining both points:
+
+---
+
+### **Abstract Method Call in Python**
+
+* The **parent class abstract method is never called**; it only defines a **contract** that subclasses must implement.
+* When the superclass calls:
+
+```python
+self.process_payment(amount)
+```
+
+* Python sees that `self` is a **subclass object**
+* It **directly calls the subclass’s method**, not the parent’s
+* There is **no call to the parent method then redirection** — the parent’s abstract method is just a placeholder.
+
+✅ **Key point:** Abstract method = contract; actual execution = subclass implementation.
