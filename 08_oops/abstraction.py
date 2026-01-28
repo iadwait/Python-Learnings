@@ -8,7 +8,7 @@ class Payment(ABC):
         print("Verifying payment details")
 
         # Hiding implementation in subclass
-        self.process_payment(amount)
+        self.process_payment(amount) # The parent class abstract method is never called; self.process_payment(amount) calls the subclass’s method.
 
         print("Payment Completed !!")
 
