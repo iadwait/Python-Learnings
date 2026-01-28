@@ -77,3 +77,81 @@ self.process_payment(amount)
 * There is **no call to the parent method then redirection** — the parent’s abstract method is just a placeholder.
 
 ✅ **Key point:** Abstract method = contract; actual execution = subclass implementation.
+
+---
+
+### Inheritance
+
+### **1. Single Inheritance**
+
+* One parent, one child.
+
+```
+Parent
+  │
+Child
+```
+
+* Child inherits all methods/attributes of Parent.
+
+---
+
+### **2. Multiple Inheritance**
+
+* One child, multiple parents.
+
+```
+Parent1   Parent2
+   \       /
+     Child
+```
+
+* Child inherits from both Parent1 and Parent2.
+
+---
+
+### **3. Multilevel Inheritance**
+
+* Chain of inheritance.
+
+```
+Grandparent
+      │
+   Parent
+      │
+    Child
+```
+
+* Methods can be overridden in any level.
+
+---
+
+### **4. Hierarchical Inheritance**
+
+* One parent, multiple children.
+
+```
+     Parent
+     /    \
+Child1   Child2
+```
+
+* All children inherit from the same parent.
+
+---
+
+### **5. Hybrid Inheritance**
+
+* Combination of two or more types (e.g., multiple + multilevel).
+
+```
+       A
+      / \
+     B   C
+      \ /
+       D
+```
+
+* D inherits from B and C, which both inherit from A.
+
+---
