@@ -155,3 +155,69 @@ Child1   Child2
 * D inherits from B and C, which both inherit from A.
 
 ---
+
+Sure! Here’s a **complete, clean set of Python Polymorphism notes**, combining everything we discussed. Perfect for exam or revision:
+
+---
+
+# **Polymorphism in Python**
+
+**Definition:**
+
+* Polymorphism means **“one interface, many forms”**.
+* Allows objects of **different classes** to be treated **uniformly**.
+* Python supports two main types: **Method Overloading** and **Method Overriding**.
+
+---
+
+## **1. Method Overloading (Python way / Simulated)**
+
+* **Definition:** Same method name, different parameters (number or type).
+* **Python Note:** Python **does NOT support traditional method overloading**.
+
+  * If multiple methods with the same name are defined in a class, **only the last one is used**.
+* **How to achieve in Python:**
+
+  * Use **default arguments**
+  * Use **`*args`** to accept variable number of arguments
+* **Important points:**
+
+  * Same method name **cannot exist multiple times** in the class.
+  * Overloading in Python is **simulated**, not true runtime polymorphism.
+  * Python handles **different arguments inside the same method**.
+
+---
+
+## **2. Method Overriding (Runtime / Dynamic Polymorphism)**
+
+* **Definition:** Child class provides its **own implementation** of a parent’s method.
+* **Key feature:** **Python decides at runtime which method to execute**, based on the **actual object type**.
+* **Important points:**
+
+  * Python is **dynamically typed**, so method resolution happens **at runtime**.
+  * Can use **`super()`** to call the parent class method inside child’s method.
+  * Shows **true runtime polymorphism**.
+
+---
+
+## **Key Differences Between Overloading & Overriding**
+
+| Feature            | Method Overloading (Python)                            | Method Overriding                                        |
+| ------------------ | ------------------------------------------------------ | -------------------------------------------------------- |
+| Method Name        | Same                                                   | Same                                                     |
+| Parameters         | Different / optional / `*args`                         | Same as parent                                           |
+| Class Involved     | Same class                                             | Parent & child class                                     |
+| Runtime Decision   | ❌ Not runtime; handled **inside method** based on args | ✅ Runtime; Python chooses method based on object’s class |
+| Use of `super()`   | Not applicable                                         | Can be used                                              |
+| True Polymorphism? | No (simulated in Python)                               | Yes (runtime polymorphism)                               |
+
+---
+
+## **Summary**
+
+* **Polymorphism = one interface, multiple behaviors**
+* **Overloading** → handled using default args or `*args` (**simulated**)
+* **Overriding** → dynamic method resolution (**true runtime polymorphism**)
+* **Important:** Python only keeps the **last defined method** if method names clash
+
+---
