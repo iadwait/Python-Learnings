@@ -221,3 +221,127 @@ Sure! Here’s a **complete, clean set of Python Polymorphism notes**, combining
 * **Important:** Python only keeps the **last defined method** if method names clash
 
 ---
+
+# **Constructor in Python**
+
+Got it! Here’s a **complete, clean set of notes on Python constructors**, avoiding the `None` part you already have:
+
+---
+
+## **Python Constructors Notes (Complete)**
+
+### 1. What is a Constructor?
+
+* A constructor is a special method used to **initialize an object** when it is created.
+* In Python, the constructor is always:
+
+```python
+__init__(self, ...)
+```
+
+---
+
+### 2. Key Points about `__init__`
+
+* Each class can have **only one `__init__`** method.
+* Python does **not support multiple constructors** like Java or C++.
+* `__init__` is called **automatically** when an object is created.
+
+---
+
+### 3. Parameterized Constructor
+
+* `__init__` can take parameters to initialize object attributes:
+
+```python
+class Test:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+obj = Test(10, 20)
+```
+
+---
+
+### 4. Default Parameter Values
+
+* Parameters can have **default values**:
+
+```python
+class Test:
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+
+obj1 = Test()      # x=0, y=0
+obj2 = Test(5, 10) # x=5, y=10
+```
+
+* This allows **optional parameters** and simulates multiple constructors.
+
+---
+
+### 5. Using `*args` and `**kwargs`
+
+* For **variable number of arguments**, you can use:
+
+```python
+class Test:
+    def __init__(self, *args, **kwargs):
+        print(args, kwargs)
+
+obj = Test(1, 2, 3, a=4, b=5)
+```
+
+* `*args` → tuple of positional arguments
+* `**kwargs` → dictionary of keyword arguments
+
+This is another way to **simulate multiple constructors**.
+
+---
+
+### 6. Alternative Constructor using `@classmethod`
+
+* You can define **class methods** that create objects differently:
+
+```python
+class Test:
+    def __init__(self, value):
+        self.value = value
+
+    @classmethod
+    def from_sum(cls, a, b):
+        return cls(a + b)
+
+obj1 = Test(10)
+obj2 = Test.from_sum(4, 6)  # value = 10
+```
+
+* `cls` refers to the class itself.
+* The method **returns a new object**, acting like an **alternative constructor**.
+
+---
+
+### 7. Key Takeaways
+
+* Python has **one constructor per class (`__init__`)**.
+* You can **simulate multiple constructors** using:
+
+  * Default parameters
+  * `*args` and `**kwargs`
+  * `@classmethod` alternative constructors
+* Constructor is **called automatically** when the object is created.
+
+---
+
+If you want, I can also make a **tiny visual diagram** showing all these ways to create objects in Python — it makes the differences very easy to remember.
+
+Do you want me to make that diagram?
+
+
+* **`None` is a singleton object** — there is only **one `None` object** in memory.
+* In `__init__`, if a parameter is **not passed**, Python assigns it the default value you wrote (`None` in this case).
+* So **checking `param is None`** tells you: “The caller didn’t provide a value,” and you can then assign a real default like `0`.
+
+It’s not that the parameter doesn’t exist in memory — it **exists**, but its value is the `None` object until you assign something else.
