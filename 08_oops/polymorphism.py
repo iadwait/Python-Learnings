@@ -29,5 +29,8 @@ class Child(Parent):
     def show(self):
         print("Child")
 
-c = Child()
-c.show()
+def callShow(obj):
+    obj.show()
+
+callShow(Parent())
+callShow(Child())
