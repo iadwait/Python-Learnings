@@ -224,12 +224,6 @@ Sure! Here’s a **complete, clean set of Python Polymorphism notes**, combining
 
 # **Constructor in Python**
 
-Got it! Here’s a **complete, clean set of notes on Python constructors**, avoiding the `None` part you already have:
-
----
-
-## **Python Constructors Notes (Complete)**
-
 ### 1. What is a Constructor?
 
 * A constructor is a special method used to **initialize an object** when it is created.
@@ -333,15 +327,67 @@ obj2 = Test.from_sum(4, 6)  # value = 10
   * `@classmethod` alternative constructors
 * Constructor is **called automatically** when the object is created.
 
----
-
-If you want, I can also make a **tiny visual diagram** showing all these ways to create objects in Python — it makes the differences very easy to remember.
-
-Do you want me to make that diagram?
-
-
 * **`None` is a singleton object** — there is only **one `None` object** in memory.
 * In `__init__`, if a parameter is **not passed**, Python assigns it the default value you wrote (`None` in this case).
 * So **checking `param is None`** tells you: “The caller didn’t provide a value,” and you can then assign a real default like `0`.
 
 It’s not that the parameter doesn’t exist in memory — it **exists**, but its value is the `None` object until you assign something else.
+
+---
+
+## **`*args` and `**kwargs` in Python**
+
+### 1. `*args`
+
+* Allows a function to accept **any number of positional arguments**.
+* Stored as a **tuple**.
+
+**Example:**
+
+```python
+def add_numbers(*args):
+    print(args)  # tuple of all numbers
+    print(sum(args))
+
+add_numbers(1, 2, 3)  # Output: (1, 2, 3) → 6
+```
+
+---
+
+### 2. `**kwargs`
+
+* Allows a function to accept **any number of keyword arguments**.
+* Stored as a **dictionary**.
+
+**Example:**
+
+```python
+def print_info(**kwargs):
+    print(kwargs)
+
+print_info(name="Alice", age=25)  # Output: {'name': 'Alice', 'age': 25}
+```
+
+---
+
+### 3. Combined Usage
+
+```python
+def func(*args, **kwargs):
+    print("Args:", args)
+    print("Kwargs:", kwargs)
+
+func(1, 2, x=10, y=20)
+# Output:
+# Args: (1, 2)
+# Kwargs: {'x': 10, 'y': 20}
+```
+
+---
+
+✅ **Summary:**
+
+* `*args` → variable **positional parameters** (tuple)
+* `**kwargs` → variable **named parameters** (dictionary)
+
+---
