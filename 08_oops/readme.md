@@ -391,3 +391,44 @@ func(1, 2, x=10, y=20)
 * `**kwargs` → variable **named parameters** (dictionary)
 
 ---
+
+Here’s a concise version of Python **access specifiers** notes for your README:
+
+---
+
+### Python Access Specifiers
+
+1. **Public (`no underscore`)**
+
+   * Accessible anywhere (inside/outside class).
+   * Example:
+
+     ```python
+     obj.public_var
+     obj.public_method()
+     ```
+
+2. **Protected (`_single underscore`)**
+
+   * Intended for internal use; still accessible outside, but discouraged.
+   * Example:
+
+     ```python
+     obj._protected_var
+     obj._protected_method()
+     ```
+
+3. **Private (`__double underscore`)**
+
+   * Not directly accessible outside the class. Python uses **name mangling**.
+   * Access via `_ClassName__var` or `_ClassName__method()`.
+   * Example:
+
+     ```python
+     obj._Example__private_var
+     obj._Example__private_method()
+     ```
+
+**Tip:** Public → widely accessible, Protected → caution, Private → internal only.
+
+---
